@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Mapa de Roraima</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css" rel="stylesheet" />
+<style>
+    body { margin: 0; padding: 0; }
+    #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+<style>
+    #menu {
+        background: #fff;
+        position: absolute;
+        z-index: 1;
+        top: 10px;
+        right: 10px;
+        border-radius: 3px;
+        width: 120px;
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    #menu a {
+        font-size: 13px;
+        color: #404040;
+        display: block;
+        margin: 0;
+        padding: 0;
+        padding: 10px;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+        text-align: center;
+    }
+
+    #menu a:last-child {
+        border: none;
+    }
+
+    #menu a:hover {
+        background-color: #f8f8f8;
+        color: #404040;
+    }
+
+    #menu a.active {
+        background-color: #3887be;
+        color: #ffffff;
+    }
+
+    #menu a.active:hover {
+        background: #3074a4;
+    }
+</style>
+
+<nav id="menu"></nav>
+<div id="map"></div>
+
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZGllZ29jb3N0YTc3MTEiLCJhIjoiY2p1bGJ0ZHNzMjU5dTQ5cHBybnB5N2h3ZiJ9.mEmQDBEUJLPF66aPKYqQLw';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/light-v10',
+        // zoom: 5,
+        // minZoom: 5,
+        center: [-60.660,1.500],
+        maxBounds: ([[-69.935304,-13.287696],[-53.768616,16.067365]])
+    });
+    map.on('load', function() {
+        map.addLayer({
+            id: 'solos',
+            type: 'fill',
+            source: {
+                type: 'vector',
+                url: 'mapbox://diegocosta7711.0z35tg6i'
+            },
+            layout: {
+                'visibility': 'visible'
+            },
+            //filter: ['==', 'SIGLA', 'GXbd4'],
+            paint: {
+                'fill-color': [
+                    'interpolate',
+                    ['linear'],
+                    ['get', 'Id'],
+                    0,'#d7191c',
+                    1,'#da2421',
+                    2,'#dd3026',
+                    3,'#e03b2c',
+                    4,'#e34731',
+                    5,'#e65236',
+                    6,'#e95e3c',
+                    7,'#ec6941',
+                    8,'#ef7546',
+                    9,'#f2804c',
+                    10,'#f58c51',
+                    11,'#f89756',
+                    12,'#fba35c',
+                    13,'#fdae61',
+                    14,'#feb468',
+                    15,'#febb6f',
+                    16,'#fec177',
+                    17,'#fec77e',
+                    18,'#fecd85',
+                    19,'#fed48c',
+                    20,'#ffda94',
+                    21,'#ffe09b',
+                    22,'#ffe6a2',
+                    23,'#ffeda9',
+                    24,'#fff3b1',
+                    27,'#fff9b8',
+                    28,'#ffffbf',
+                    29,'#f9fdbd',
+                    30,'#f3fabb',
+                    31,'#ecf8b9',
+                    32,'#e6f5b7',
+                    33,'#dff2b5',
+                    34,'#d9f0b3',
+                    36,'#d2edb1',
+                    38,'#cceaaf',
+                    42,'#c5e8ac',
+                    43,'#bfe5aa',
+                    46,'#b8e3a8',
+                    47,'#b2e0a6',
+                    48,'#abdda4',
+                    49,'#bfe5aa',
+                    50,'#97cfa8',
+                    51,'#8ec9a9',
+                    53,'#bfe5aa',
+                    54,'#7abbad',
+                    55,'#70b4ae',
+                    56,'#66adb0',
+                    57,'#5ca6b2',
+                    58,'#bfe5aa',
+                    59,'#4898b5',
+                    60,'#3e91b7',
+                    62,'#358ab9'
+                ],
+                'fill-outline-color':'#000000',
+            },
+            'source-layer': 'solos',
+        });
+
+        map.addLayer({
+            id: 'militar',
+            type: 'fill',
+            source: {
+                type: 'vector',
+                url: 'mapbox://diegocosta7711.d9y4274j'
+            },
+            layout: {
+                'visibility': 'visible'
+            },
+            paint: {
+                'fill-color': "hsl(79, 72%, 37%)"
+            },
+            'source-layer': 'militar'
+        });
+
+        map.addLayer({
+            id: 'terras_indigenas',
+            type: 'fill',
+            source: {
+                type: 'vector',
+                url: 'mapbox://diegocosta7711.d7s1lxm8'
+            },
+            layout: {
+                'visibility': 'visible'
+            },
+            paint: {
+                'fill-color': "hsl(26, 63%, 33%)"
+            },
+            'source-layer': 'terras_indigenas'
+        });
+
+        map.addLayer({
+            id: 'hidrografia',
+            type: 'fill',
+            source: {
+                type: 'vector',
+                url: 'mapbox://diegocosta7711.4xpms2f0'
+            },
+            layout: {
+                'visibility': 'visible'
+            },
+            paint: {
+                'fill-color': "hsl(242, 100%, 47%)"
+            },
+            'source-layer': 'hidrografia'
+        });
+
+        map.addLayer({
+            id: 'estradas',
+            type: 'line',
+            source: {
+                type: 'vector',
+                url: 'mapbox://diegocosta7711.2kv37yjt'
+            },
+            layout: {
+                'visibility': 'visible'
+            },
+            paint: {
+                'line-color': "hsl(0, 0, 26%)"
+            },
+            'source-layer': 'estradas'
+        });
+
+
+
+    });
+
+    var toggleableLayerIds = ['militar', 'solos', 'terras_indigenas', 'estradas', 'hidrografia'];
+
+    for (var i = 0; i < toggleableLayerIds.length; i++) {
+        var id = toggleableLayerIds[i];
+
+        var link = document.createElement('a');
+        link.href = '#';
+        link.className = 'active';
+        link.textContent = id;
+
+        link.onclick = function(e) {
+            var clickedLayer = this.textContent;
+            e.preventDefault();
+            e.stopPropagation();
+
+            var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+
+            if (visibility === 'visible') {
+                map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+                this.className = '';
+            } else {
+                this.className = 'active';
+                map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+            }
+        };
+
+        var layers = document.getElementById('menu');
+        layers.appendChild(link);
+    }
+</script>
+
+</body>
+</html>
