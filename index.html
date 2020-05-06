@@ -1,247 +1,384 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8" />
-<title>Mapa de Roraima</title>
-<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-<script src="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js"></script>
-<link href="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css" rel="stylesheet" />
-<style>
-    body { margin: 0; padding: 0; }
-    #map { position: absolute; top: 0; bottom: 0; width: 100%; }
-</style>
-</head>
-<body>
-<style>
-    #menu {
-        background: #fff;
-        position: absolute;
-        z-index: 1;
-        top: 10px;
-        right: 10px;
-        border-radius: 3px;
-        width: 120px;
-        border: 1px solid rgba(0, 0, 0, 0.4);
-        font-family: 'Open Sans', sans-serif;
-    }
+    <head>
+        <meta charset="utf-8" />
+        <title>Mapa de Roraima</title>
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+        <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js"></script>
+        <link href="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="./styles.css" />
+        <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <section id="layers"> <!-- BOX BEGGINING -->
+    <div class="menu" id="style-3"> <!-- MENU BEGGINING -->
 
-    #menu a {
-        font-size: 13px;
-        color: #404040;
-        display: block;
-        margin: 0;
-        padding: 0;
-        padding: 10px;
-        text-decoration: none;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-        text-align: center;
-    }
+      <button class="accordion">Área Militar <!-- FIRST SECTION BEGGING -->
+        <div class="icon">
+          <img src="./icons/chevron-down.svg" class="icon-expand">
+          <img src="./icons/chevron-up.svg" class="icon-retract">
+        </div>
+      </button>
+      <div class="panel"> 
+        <section class="layer-labels">
+          <section>
+            <label class="container">Área militar
+              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('militar')">
+              <span class="militar"></span>
+            </label>
+          </section>
+        </section>
+      </div> <!-- FIRST SECTION ENDING -->
 
-    #menu a:last-child {
-        border: none;
-    }
+      <button class="accordion">Áreas consolidadas <!-- FIRST SECTION BEGGING -->
+        <div class="icon">
+          <img src="./icons/chevron-down.svg" class="icon-expand">
+          <img src="./icons/chevron-up.svg" class="icon-retract">
+        </div>
+      </button>
+      <div class="panel"> 
+        <section class="layer-labels">
+          <section>
+            <label class="container">Área consolidada RR
+              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('area_consolidada')">
+              <span class="area_consolidada_rr" ></span>
+            </label>
+            <label class="container">Área consolidada BV
+              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('Area_consolidade_BV')">
+              <span class="area_consolidada_bv"></span>
+            </label>
+          </section>
+        </section>
+      </div> <!-- FIRST SECTION ENDING -->
 
-    #menu a:hover {
-        background-color: #f8f8f8;
-        color: #404040;
-    }
+      <button class="accordion">Assentamentos <!-- SECOND SECTION BEGGING -->
+        <div class="icon">
+          <img src="./icons/chevron-down.svg" class="icon-expand">
+          <img src="./icons/chevron-up.svg" class="icon-retract">
+        </div>
+      </button>
+      <div class="panel"> 
+        <section class="layer-labels">
+          
+          <section>
+            
+          </section>
+        </section>
+      </div> <!-- SECOND SECTION ENDING -->     
 
-    #menu a.active {
-        background-color: #3887be;
-        color: #ffffff;
-    }
+      <button class="accordion"> Biomas <!-- THIRD SECTION BEGGING -->
+        <div class="icon">
+          <img src="./icons/chevron-down.svg" class="icon-expand">
+          <img src="./icons/chevron-up.svg" class="icon-retract">
+        </div>
+      </button>
+      <div class="panel"> 
+        <section class="layer-labels">
+          <section>
+            <label class="container">Brejo RR
+              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('brejo_rr')">
+              <span class="brejo_rr"></span>
+            </label>
+            <label class="container">Cerrado RR
+              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('cerrado_rr')">
+              <span class="cerrado_rr"></span>
+            </label>
+            <label class="container">Rocha
+              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('rel_rocha_a')">
+              <span class="rocha"></span>
+            </label>
+          </section>
+        </section>
+      </div> <!-- THIRD SECTION ENDING -->
 
-    #menu a.active:hover {
-        background: #3074a4;
-    }
-</style>
+      <button class="accordion">Cidades e estradas <!-- FOUTH SECTION BEGGING -->
+        <div class="icon">
+          <img src="./icons/chevron-down.svg" class="icon-expand">
+          <img src="./icons/chevron-up.svg" class="icon-retract">
+        </div>
+      </button>
+      <div class="panel"> 
+        <section class="layer-labels">
+          <section>
+            <label class="container">Limites municipais
+              <input type="checkbox"  onclick="hideOrShowLayer('limites_municipais')">
+              <span class="limites_municipais"></span>
+            </label>
+            <label class="container">Estradas
+              <input type="checkbox"  onclick="hideOrShowLayer('estradas')">
+              <span class="estradas"></span>
+            </label>
+            <label class="container">Trecho rodoviário
+              <input type="checkbox"  onclick="hideOrShowLayer('trecho_rodoviario_l')">
+              <span class="trecho_rodoviario"></span>
+            </label>
+            <label class="container">Arruamento
+              <input type="checkbox"  onclick="hideOrShowLayer('tra_arruamento_l')">
+              <span class="arruamento"></span>
+            </label>
+            <label class="container">Picadas
+              <input type="checkbox"  onclick="hideOrShowLayer('trilha_picada')">
+              <span class="picadas"></span>
+            </label>
+          </section>
+        </section>
+      </div> <!-- FOUTH SECTION ENDING -->
 
-<nav id="menu"></nav>
-<div id="map"></div>
+      <button class="accordion">Demarcações indígenas<!-- FIFTH SECTION BEGGING -->
+        <div class="icon">
+          <img src="./icons/chevron-down.svg" class="icon-expand">
+          <img src="./icons/chevron-up.svg" class="icon-retract">
+        </div>
+      </button>
+      <div class="panel"> 
+        <section class="layer-labels">
+          
+          <section>
+            <label class="container">Demarcações indígenas
+              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('terras_indigenas')">
+              <span class="terras_indigenas"></span>
+            </label>
+          </section>
+        </section>
+      </div> <!-- FIFTH SECTION ENDING -->
 
-<script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZGllZ29jb3N0YTc3MTEiLCJhIjoiY2p1bGJ0ZHNzMjU5dTQ5cHBybnB5N2h3ZiJ9.mEmQDBEUJLPF66aPKYqQLw';
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/light-v10',
-        // zoom: 5,
-        // minZoom: 5,
-        center: [-60.660,1.500],
-        maxBounds: ([[-69.935304,-13.287696],[-53.768616,16.067365]])
-    });
-    map.on('load', function() {
-        map.addLayer({
-            id: 'solos',
-            type: 'fill',
-            source: {
-                type: 'vector',
-                url: 'mapbox://diegocosta7711.0z35tg6i'
-            },
-            layout: {
-                'visibility': 'visible'
-            },
-            //filter: ['==', 'SIGLA', 'GXbd4'],
-            paint: {
-                'fill-color': [
-                    'interpolate',
-                    ['linear'],
-                    ['get', 'Id'],
-                    0,'#d7191c',
-                    1,'#da2421',
-                    2,'#dd3026',
-                    3,'#e03b2c',
-                    4,'#e34731',
-                    5,'#e65236',
-                    6,'#e95e3c',
-                    7,'#ec6941',
-                    8,'#ef7546',
-                    9,'#f2804c',
-                    10,'#f58c51',
-                    11,'#f89756',
-                    12,'#fba35c',
-                    13,'#fdae61',
-                    14,'#feb468',
-                    15,'#febb6f',
-                    16,'#fec177',
-                    17,'#fec77e',
-                    18,'#fecd85',
-                    19,'#fed48c',
-                    20,'#ffda94',
-                    21,'#ffe09b',
-                    22,'#ffe6a2',
-                    23,'#ffeda9',
-                    24,'#fff3b1',
-                    27,'#fff9b8',
-                    28,'#ffffbf',
-                    29,'#f9fdbd',
-                    30,'#f3fabb',
-                    31,'#ecf8b9',
-                    32,'#e6f5b7',
-                    33,'#dff2b5',
-                    34,'#d9f0b3',
-                    36,'#d2edb1',
-                    38,'#cceaaf',
-                    42,'#c5e8ac',
-                    43,'#bfe5aa',
-                    46,'#b8e3a8',
-                    47,'#b2e0a6',
-                    48,'#abdda4',
-                    49,'#bfe5aa',
-                    50,'#97cfa8',
-                    51,'#8ec9a9',
-                    53,'#bfe5aa',
-                    54,'#7abbad',
-                    55,'#70b4ae',
-                    56,'#66adb0',
-                    57,'#5ca6b2',
-                    58,'#bfe5aa',
-                    59,'#4898b5',
-                    60,'#3e91b7',
-                    62,'#358ab9'
-                ],
-                'fill-outline-color':'#000000',
-            },
-            'source-layer': 'solos',
-        });
-
-        map.addLayer({
-            id: 'militar',
-            type: 'fill',
-            source: {
-                type: 'vector',
-                url: 'mapbox://diegocosta7711.d9y4274j'
-            },
-            layout: {
-                'visibility': 'visible'
-            },
-            paint: {
-                'fill-color': "hsl(79, 72%, 37%)"
-            },
-            'source-layer': 'militar'
-        });
-
-        map.addLayer({
-            id: 'terras_indigenas',
-            type: 'fill',
-            source: {
-                type: 'vector',
-                url: 'mapbox://diegocosta7711.d7s1lxm8'
-            },
-            layout: {
-                'visibility': 'visible'
-            },
-            paint: {
-                'fill-color': "hsl(26, 63%, 33%)"
-            },
-            'source-layer': 'terras_indigenas'
-        });
-
-        map.addLayer({
-            id: 'hidrografia',
-            type: 'fill',
-            source: {
-                type: 'vector',
-                url: 'mapbox://diegocosta7711.4xpms2f0'
-            },
-            layout: {
-                'visibility': 'visible'
-            },
-            paint: {
-                'fill-color': "hsl(242, 100%, 47%)"
-            },
-            'source-layer': 'hidrografia'
-        });
-
-        map.addLayer({
-            id: 'estradas',
-            type: 'line',
-            source: {
-                type: 'vector',
-                url: 'mapbox://diegocosta7711.2kv37yjt'
-            },
-            layout: {
-                'visibility': 'visible'
-            },
-            paint: {
-                'line-color': "hsl(0, 0, 26%)"
-            },
-            'source-layer': 'estradas'
-        });
+      <button class="accordion">Hidrografia <!-- SIXTH SECTION BEGGING -->
+        <div class="icon">
+          <img src="./icons/chevron-down.svg" class="icon-expand">
+          <img src="./icons/chevron-up.svg" class="icon-retract">
+        </div>
+      </button>
+      <div class="panel"> 
+        <section class="layer-labels">
+          <section>
+            <label class="container">Hidrografia
+              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('hidrografia')">
+              <span class="hidrografia"></span>
+            </label>
+            <label class="container">Bacias
+              <input type="checkbox" onclick="hideOrShowLayer('none')">
+              <span class="bacias"></span>
+            </label>
+          </section>
+        </section>
+      </div> <!-- SIXTH SECTION ENDING -->
 
 
+      <button class="accordion">Tipos de solo <!-- SEVENTH SECTION BEGGING -->
+        <div class="icon">
+          <img src="./icons/chevron-down.svg" class="icon-expand">
+          <img src="./icons/chevron-up.svg" class="icon-retract">
+        </div>
+      </button>
+      <div class="panel"> 
+        <label class="container">Mostrar/Não mostrar
+          <input type="checkbox" checked="checked" onclick="hideOrShowLayer('solos')">
+          <span class="solos"></span>
+        </label>
+        <br>
+        <section class="soil-labels">
+          <section>
+            
+            <label class="label_box">GXbd3
+              <span class="legenda_solo" style="background-color: #d7191c;"></span>
+            </label>
+            <label class="label_box">SNo1
+              <span class="legenda_solo" style="background-color: #da2421;"></span>
+            </label>
+            <label class="label_box">SXd1
+              <span class="legenda_solo" style="background-color: #dd3026;"></span>
+            </label>
+            <label class="label_box">GXbd1
+              <span class="legenda_solo" style="background-color: #e03b2c;"></span>
+            </label>
+            <label class="label_box">RQg1
+              <span class="legenda_solo" style="background-color: #e34731;"></span>
+            </label>
+            <label class="label_box">GXbd2
+              <span class="legenda_solo" style="background-color: #e65236;"></span>
+            </label>
+            <label class="label_box">LVd1
+              <span class="legenda_solo" style="background-color: #e95e3c;"></span>
+            </label>
+            <label class="label_box">LAd1
+              <span class="legenda_solo" style="background-color: #ec6941;"></span>
+            </label>
+            <label class="label_box">CXbd1
+              <span class="legenda_solo" style="background-color: #ef7546;"></span>
+            </label>
+            <label class="label_box">NVe1
+              <span class="legenda_solo" style="background-color: #f2804c;"></span>
+            </label>
+            <label class="label_box">RLd1
+              <span class="legenda_solo" style="background-color: #f58c51;"></span>
+            </label>
+            <label class="label_box">RLd2
+              <span class="legenda_solo" style="background-color: #f89756;"></span>
+            </label>
+            <label class="label_box">PVAd1
+              <span class="legenda_solo" style="background-color: #fba35c;"></span>
+            </label>
+          </section>
 
-    });
+          <section>
+            <label class="label_box">PVAd2
+              <span class="legenda_solo" style="background-color: #fdae61;"></span>
+            </label>
+            <label class="label_box">RLd3
+              <span class="legenda_solo" style="background-color: #feb468;"></span>
+            </label>
+            <label class="label_box">LVAd1
+              <span class="legenda_solo" style="background-color: #febb6f;"></span>
+            </label>
+            <label class="label_box">RQg2
+              <span class="legenda_solo" style="background-color: #fec177;"></span>
+            </label>
+            <label class="label_box">GXbd5
+              <span class="legenda_solo" style="background-color: #fec77e;"></span>
+            </label>
+            <label class="label_box">LAd2
+              <span class="legenda_solo" style="background-color: #fecd85;"></span>
+            </label>
+            <label class="label_box">LVd2
+              <span class="legenda_solo" style="background-color: #fed48c;"></span>
+            </label>
+            <label class="label_box">LVd3
+              <span class="legenda_solo" style="background-color: #ffda94;"></span>
+            </label>
+            <label class="label_box">PAd1
+              <span class="legenda_solo" style="background-color: #ffe09b;"></span>
+            </label>
+            <label class="label_box">PVe1
+              <span class="legenda_solo" style="background-color: #ffe6a2;"></span>
+            </label>
+            <label class="label_box">LVd4
+              <span class="legenda_solo" style="background-color: #ffeda9;"></span>
+            </label>
+            <label class="label_box">LVAd4
+              <span class="legenda_solo" style="background-color: #fff3b1;"></span>
+            </label>
+            <label class="label_box">PVAd3
+              <span class="legenda_solo" style="background-color: #fff9b8;"></span>
+            </label>
+          </section>
 
-    var toggleableLayerIds = ['militar', 'solos', 'terras_indigenas', 'estradas', 'hidrografia'];
+          <section>
+            <label class="label_box">LVAd4
+              <span class="legenda_solo" style="background-color: #ffffbf;"></span>
+            </label>
+            <label class="label_box">PAd2
+              <span class="legenda_solo" style="background-color: #f9fdbd;"></span>
+            </label>
+            <label class="label_box">EKg1
+              <span class="legenda_solo" style="background-color: #f3fabb;"></span>
+            </label>
+            <label class="label_box">RQg3
+              <span class="legenda_solo" style="background-color: #ecf8b9;"></span>
+            </label>
+            <label class="label_box">RQg4
+              <span class="legenda_solo" style="background-color: #e6f5b7;"></span>
+            </label>
+            <label class="label_box">ESKu1
+              <span class="legenda_solo" style="background-color: #dff2b5;"></span>
+            </label>
+            <label class="label_box">RLd7
+              <span class="legenda_solo" style="background-color: #d9f0b3;"></span>
+            </label>
+            <label class="label_box">LAd6
+              <span class="legenda_solo" style="background-color: #d2edb1;"></span>
+            </label>
+            <label class="label_box">RLd4
+              <span class="legenda_solo" style="background-color: #cceaaf;"></span>
+            </label>
+            <label class="label_box">GXbd4
+              <span class="legenda_solo" style="background-color: #c5e8ac;"></span>
+            </label>
+            <label class="label_box">LAd3
+              <span class="legenda_solo" style="background-color: #bfe5ab;"></span>
+            </label>
+            <label class="label_box">LAd4
+              <span class="legenda_solo" style="background-color: #b8e3a8;"></span>
+            </label>
+            <label class="label_box">LVAd2
+              <span class="legenda_solo" style="background-color: #b2e0a6;"></span>
+            </label>
+          </section>
 
-    for (var i = 0; i < toggleableLayerIds.length; i++) {
-        var id = toggleableLayerIds[i];
+          <section>
+            <label class="label_box">LVd6
+              <span class="legenda_solo" style="background-color: #bfe5ae;"></span>
+            </label>
+            
+            <label class="label_box">PVAd4
+              <span class="legenda_solo" style="background-color: #bfe5ac;"></span>
+            </label>
+            <label class="label_box">PVAd5
+              <span class="legenda_solo" style="background-color: #bfe5ad;"></span>
+            </label>
+            <label class="label_box">LVAd3
+              <span class="legenda_solo" style="background-color: #abdda4;"></span>
+            </label>
+            <label class="label_box">LAd5
+              <span class="legenda_solo" style="background-color: #97cfa8;"></span>
+            </label>
+            <label class="label_box">LVd5
+              <span class="legenda_solo" style="background-color: #8ec9a9;"></span>
+            </label>
+            
+            <label class="label_box">FFc1
+              <span class="legenda_solo" style="background-color: #7abbad;"></span>
+            </label>
+            <label class="label_box">NVe2
+              <span class="legenda_solo" style="background-color: #70b4ae;"></span>
+            </label>
+            <label class="label_box">RLd5
+              <span class="legenda_solo" style="background-color: #66adb0;"></span>
+            </label>
+            <label class="label_box">RLd6
+              <span class="legenda_solo" style="background-color: #5ca6b2;"></span>
+            </label>
+            
+            <label class="label_box">VGk 1
+              <span class="legenda_solo" style="background-color: #4898b5;"></span>
+            </label>
+            <label class="label_box">CXbd2
+              <span class="legenda_solo" style="background-color: #3e91b7;"></span>
+            </label>
+            <label class="label_box">FXd1
+              <span class="legenda_solo" style="background-color: #358ab9;"></span>
+            </label>
+          </section>
+        </section>
+      </div> <!-- SEVENTH SECTION ENDING -->
 
-        var link = document.createElement('a');
-        link.href = '#';
-        link.className = 'active';
-        link.textContent = id;
+      <button class="accordion">UCS <!-- EIGHTH SECTION BEGGING -->
+        <div class="icon">
+          <img src="./icons/chevron-down.svg" class="icon-expand">
+          <img src="./icons/chevron-up.svg" class="icon-retract">
+        </div>
+      </button>
+      <div class="panel"> 
+        <section class="layer-labels">
+          <section>
+           
+          </section>
+          
+        </section>
+      </div> <!-- EIGHTH SECTION ENDING -->
 
-        link.onclick = function(e) {
-            var clickedLayer = this.textContent;
-            e.preventDefault();
-            e.stopPropagation();
+    </div> <!-- MENU ENDING -->
+  </section> <!-- BOX ENDING -->
 
-            var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+        <section id="analysis">
+            <h3 class="h3-header">Análise de propriedade</h3>
+            <input type="file" id="shape" class="input_file" onchange="analysisShape(this.files)">
+            <div class="tooltip">
+                <span class="tooltiptext">Faça upload de um shape no formato geojson</span>
+                <i class="fa fa-info-circle"></i>
+            </div>
+        </section>
+        <div id="map"></div>
 
-            if (visibility === 'visible') {
-                map.setLayoutProperty(clickedLayer, 'visibility', 'none');
-                this.className = '';
-            } else {
-                this.className = 'active';
-                map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-            }
-        };
-
-        var layers = document.getElementById('menu');
-        layers.appendChild(link);
-    }
-</script>
-
-</body>
+    <script src="functions.js"></script>
+    </body>
 </html>
