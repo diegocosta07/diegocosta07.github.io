@@ -144,7 +144,7 @@ body {
 
 #analysis p {
   color: #e82e2e;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .h3-header {
@@ -164,7 +164,7 @@ label {
   padding-left: 18px;
   margin-bottom: 5px;
   cursor: pointer;
-  font-size: 11px;
+  font-size: 12px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -591,7 +591,7 @@ label {
   position: relative;
   padding-left: 18px;
   margin-bottom: 5px;
-  font-size: 10px;
+  font-size: 12px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -609,7 +609,7 @@ label {
 
 .input_file {
   border-width: 5px;
-  width: 80%;
+  width: 88%;
   margin-left: 10px;
 }
 
