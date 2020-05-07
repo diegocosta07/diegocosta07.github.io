@@ -314,6 +314,24 @@ map.on('load', function() {
         'source-layer': 'trilha_picada'
     });
 
+    // When a click event occurs on a feature in the states layer, open a popup at the
+    // location of the click, with description HTML from its properties.
+    map.on('click', 'solos', function(e) {
+        new mapboxgl.Popup()
+        .setLngLat(e.lngLat)
+        .setHTML(e.features[0].properties["SIGLA"])
+        .addTo(map);
+    });
+
+    // Change the cursor to a pointer when the mouse is over the states layer.
+    map.on('mouseenter', 'solos', function() {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'solos', function() {
+        map.getCanvas().style.cursor = '';
+    });
 
 });
 
@@ -346,10 +364,14 @@ function loadProperty() {
             'visibility': 'visible'
         },
         'paint': {
-            'fill-color': '#ffffff',
-            'fill-opacity': 0.8
+            'fill-color': '#fff',
+            'fill-opacity': 0.1,
+            'fill-outline-color': '#000'
         }
     });
+
+
+
 }
 
 function hideOrShowLayer(name) {
@@ -365,23 +387,29 @@ function hideOrShowLayer(name) {
 }
 
 function loadInfos(){
-    const url1 = "https://api.mapbox.com/v4/diegocosta7711.7gdn6lnk,diegocosta7711.d7s1lxm8/tilequery/";
+    const url1 = "https://api.mapbox.com/v4/diegocosta7711.7gdn6lnk/tilequery/";
     const url2 = ".json?limit=20&access_token=pk.eyJ1IjoiZGllZ29jb3N0YTc3MTEiLCJhIjoiY2p1bGJ0ZHNzMjU5dTQ5cHBybnB5N2h3ZiJ9.mEmQDBEUJLPF66aPKYqQLw"
     var args,url;
+    var soils = [];
     var xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             response = JSON.parse(xhr.response);
-            console.log(response)
+            soil = response.features[0]['properties']['SIGLA'];
+            if(soils.includes(soil)) {
+
+            } else{
+                soils.push(soil);
+            }
         }
+        console.log(soils);
     };
 
     
 
     for(let i=0; i<coordinates[0].length; i++) {
         args = String(coordinates[0][i][0]) +","+ String(coordinates[0][i][1])
-        console.log(args)
         url = url1+args+url2;
         xhr.open("GET", url, false);
         xhr.send();
