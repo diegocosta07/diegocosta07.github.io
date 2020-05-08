@@ -365,12 +365,22 @@ function loadProperty() {
         },
         'paint': {
             'fill-color': '#fff',
-            'fill-opacity': 0.1,
+            'fill-opacity': 0.3,
             'fill-outline-color': '#000'
         }
     });
 
+    var mid = Math.floor((coordinates[0].length)/2);
 
+    map.flyTo({
+    	center: coordinates[0][mid],
+    	zoom: 9,
+    	speed: 0.7,
+    	curve: 1,
+    	easing(t) {
+    		return t;
+    	}
+    });
 
 }
 
@@ -403,7 +413,6 @@ function loadInfos(){
                 soils.push(soil);
             }
         }
-        console.log(soils);
     };
 
     
