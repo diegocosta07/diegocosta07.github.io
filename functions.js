@@ -1,5 +1,5 @@
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiZGllZ29jb3N0YTc3MTEiLCJhIjoiY2p1bGJ0ZHNzMjU5dTQ5cHBybnB5N2h3ZiJ9.mEmQDBEUJLPF66aPKYqQLw';
+mapboxgl.accessToken = 'pk.eyJ1IjoiZGllZ29jb3N0YTc3MTEiLCJhIjoiY2s5eXJvczA1MHk3bDNtcGI5NHZvYWdlMSJ9.AvojtClJoCb29eZW_PY8tg';
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/satellite-v9',
@@ -434,7 +434,7 @@ function analysisShape(file) {
         element.remove(); 
     }
     
-    const url = "http://localhost:3333/readfile";
+    const url = "https://backend-rr-solos-mapa.herokuapp.com/readfile";
     var xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function() {
