@@ -13,7 +13,392 @@
         <section id="layers"> <!-- BOX BEGGINING -->
     <div class="menu" id="style-3"> <!-- MENU BEGGINING -->
 
-      <button class="accordion">Área Militar <!-- FIRST SECTION BEGGING -->
+      <button class="accordion">Divisão territorial <!-- SECTION BEGGINING -->
+        <div class="icon">
+          <img src="./icons/chevron-down.svg" class="icon-expand">
+          <img src="./icons/chevron-up.svg" class="icon-retract">
+        </div>
+      </button>
+      <div class="panel"> 
+        <section class="layer-labels">
+          <section>
+            <label class="container">Área consolidada
+              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('area_consolidada')">
+              <span class="area_consolidada_rr" ></span>
+            </label>
+            <label class="container">Limites municipais
+              <input type="checkbox"  onclick="hideOrShowLayer('limites_municipais')">
+              <span class="limites_municipais"></span>
+            </label>
+          </section>
+        </section>
+      </div> <!-- SECTION ENDING -->
+
+      <button class="accordion">Ambiente <!-- SECTION BEGGINING -->
+        <div class="icon">
+          <img src="./icons/chevron-down.svg" class="icon-expand">
+          <img src="./icons/chevron-up.svg" class="icon-retract">
+        </div>
+      </button>
+      <div class="panel"> 
+        <button class="accordion" style="background-color: #fff;">Clima <!-- SUBSECTION BEGGINING -->
+          <div class="icon">
+            <img src="./icons/chevron-down.svg" class="icon-expand">
+            <img src="./icons/chevron-up.svg" class="icon-retract">
+          </div>
+        </button>
+        <div class="panel"> 
+          <section class="layer-labels">
+            <section>
+              <label class="container">Isoetas
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Pluviometria
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Temperatura máxima
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Temperatura mínima
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Temperatura média
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Estações meteorólogicas
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Unidades climáticas
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+            </section>
+          </section>
+        </div> <!-- SUBSECTION ENDING -->
+        <button class="accordion" style="background-color: #fff;">Relevo <!-- SUBSECTION BEGGINING -->
+          <div class="icon">
+            <img src="./icons/chevron-down.svg" class="icon-expand">
+            <img src="./icons/chevron-up.svg" class="icon-retract">
+          </div>
+        </button>
+        <div class="panel"> 
+          <section class="layer-labels">
+            <section>
+              <label class="container">Formas de relevo
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Altimetria
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Classes de declividade
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Curva de nível
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+            </section>
+          </section>
+        </div> <!-- SUBSECTION ENDING -->
+        <button class="accordion" style="background-color: #fff;">Hidrografia <!-- SUBSECTION BEGGINING -->
+          <div class="icon">
+            <img src="./icons/chevron-down.svg" class="icon-expand">
+            <img src="./icons/chevron-up.svg" class="icon-retract">
+          </div>
+        </button>
+        <div class="panel"> 
+          <section class="layer-labels">
+            <section>
+              <label class="container">Rede hidrográfica
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Sub-bacias hidrográficas
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Bacias hidrográficas
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+            </section>
+          </section>
+        </div> <!-- SUBSECTION ENDING -->
+        <button class="accordion" style="background-color: #fff;">Solos <!-- SUBSECTION BEGGINING -->
+          <div class="icon">
+            <img src="./icons/chevron-down.svg" class="icon-expand">
+            <img src="./icons/chevron-up.svg" class="icon-retract">
+          </div>
+        </button>
+        <div class="panel"> 
+          <label class="container">Apitidão
+            <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+            <span class="#"></span>
+          </label>
+          <label class="container">Mostrar/Não mostrar Classificação
+            <input type="checkbox" checked="checked" onclick="hideOrShowLayer('solos')">
+            <span class="solos"></span>
+          </label>
+          <br>
+          <section class="soil-labels">
+            <section>
+
+              <label class="label_box">GXbd3
+                <span class="legenda_solo" style="background-color: #d7191c;"></span>
+              </label>
+              <label class="label_box">SNo1
+                <span class="legenda_solo" style="background-color: #da2421;"></span>
+              </label>
+              <label class="label_box">SXd1
+                <span class="legenda_solo" style="background-color: #dd3026;"></span>
+              </label>
+              <label class="label_box">GXbd1
+                <span class="legenda_solo" style="background-color: #e03b2c;"></span>
+              </label>
+              <label class="label_box">RQg1
+                <span class="legenda_solo" style="background-color: #e34731;"></span>
+              </label>
+              <label class="label_box">GXbd2
+                <span class="legenda_solo" style="background-color: #e65236;"></span>
+              </label>
+              <label class="label_box">LVd1
+                <span class="legenda_solo" style="background-color: #e95e3c;"></span>
+              </label>
+              <label class="label_box">LAd1
+                <span class="legenda_solo" style="background-color: #ec6941;"></span>
+              </label>
+              <label class="label_box">CXbd1
+                <span class="legenda_solo" style="background-color: #ef7546;"></span>
+              </label>
+              <label class="label_box">NVe1
+                <span class="legenda_solo" style="background-color: #f2804c;"></span>
+              </label>
+              <label class="label_box">RLd1
+                <span class="legenda_solo" style="background-color: #f58c51;"></span>
+              </label>
+              <label class="label_box">RLd2
+                <span class="legenda_solo" style="background-color: #f89756;"></span>
+              </label>
+              <label class="label_box">PVAd1
+                <span class="legenda_solo" style="background-color: #fba35c;"></span>
+              </label>
+            </section>
+
+            <section>
+              <label class="label_box">PVAd2
+                <span class="legenda_solo" style="background-color: #fdae61;"></span>
+              </label>
+              <label class="label_box">RLd3
+                <span class="legenda_solo" style="background-color: #feb468;"></span>
+              </label>
+              <label class="label_box">LVAd1
+                <span class="legenda_solo" style="background-color: #febb6f;"></span>
+              </label>
+              <label class="label_box">RQg2
+                <span class="legenda_solo" style="background-color: #fec177;"></span>
+              </label>
+              <label class="label_box">GXbd5
+                <span class="legenda_solo" style="background-color: #fec77e;"></span>
+              </label>
+              <label class="label_box">LAd2
+                <span class="legenda_solo" style="background-color: #fecd85;"></span>
+              </label>
+              <label class="label_box">LVd2
+                <span class="legenda_solo" style="background-color: #fed48c;"></span>
+              </label>
+              <label class="label_box">LVd3
+                <span class="legenda_solo" style="background-color: #ffda94;"></span>
+              </label>
+              <label class="label_box">PAd1
+                <span class="legenda_solo" style="background-color: #ffe09b;"></span>
+              </label>
+              <label class="label_box">PVe1
+                <span class="legenda_solo" style="background-color: #ffe6a2;"></span>
+              </label>
+              <label class="label_box">LVd4
+                <span class="legenda_solo" style="background-color: #ffeda9;"></span>
+              </label>
+              <label class="label_box">LVAd4
+                <span class="legenda_solo" style="background-color: #fff3b1;"></span>
+              </label>
+              <label class="label_box">PVAd3
+                <span class="legenda_solo" style="background-color: #fff9b8;"></span>
+              </label>
+            </section>
+
+            <section>
+              <label class="label_box">LVAd4
+                <span class="legenda_solo" style="background-color: #ffffbf;"></span>
+              </label>
+              <label class="label_box">PAd2
+                <span class="legenda_solo" style="background-color: #f9fdbd;"></span>
+              </label>
+              <label class="label_box">EKg1
+                <span class="legenda_solo" style="background-color: #f3fabb;"></span>
+              </label>
+              <label class="label_box">RQg3
+                <span class="legenda_solo" style="background-color: #ecf8b9;"></span>
+              </label>
+              <label class="label_box">RQg4
+                <span class="legenda_solo" style="background-color: #e6f5b7;"></span>
+              </label>
+              <label class="label_box">ESKu1
+                <span class="legenda_solo" style="background-color: #dff2b5;"></span>
+              </label>
+              <label class="label_box">RLd7
+                <span class="legenda_solo" style="background-color: #d9f0b3;"></span>
+              </label>
+              <label class="label_box">LAd6
+                <span class="legenda_solo" style="background-color: #d2edb1;"></span>
+              </label>
+              <label class="label_box">RLd4
+                <span class="legenda_solo" style="background-color: #cceaaf;"></span>
+              </label>
+              <label class="label_box">GXbd4
+                <span class="legenda_solo" style="background-color: #c5e8ac;"></span>
+              </label>
+              <label class="label_box">LAd3
+                <span class="legenda_solo" style="background-color: #bfe5ab;"></span>
+              </label>
+              <label class="label_box">LAd4
+                <span class="legenda_solo" style="background-color: #b8e3a8;"></span>
+              </label>
+              <label class="label_box">LVAd2
+                <span class="legenda_solo" style="background-color: #b2e0a6;"></span>
+              </label>
+            </section>
+
+            <section>
+              <label class="label_box">LVd6
+                <span class="legenda_solo" style="background-color: #bfe5ae;"></span>
+              </label>
+
+              <label class="label_box">PVAd4
+                <span class="legenda_solo" style="background-color: #bfe5ac;"></span>
+              </label>
+              <label class="label_box">PVAd5
+                <span class="legenda_solo" style="background-color: #bfe5ad;"></span>
+              </label>
+              <label class="label_box">LVAd3
+                <span class="legenda_solo" style="background-color: #abdda4;"></span>
+              </label>
+              <label class="label_box">LAd5
+                <span class="legenda_solo" style="background-color: #97cfa8;"></span>
+              </label>
+              <label class="label_box">LVd5
+                <span class="legenda_solo" style="background-color: #8ec9a9;"></span>
+              </label>
+
+              <label class="label_box">FFc1
+                <span class="legenda_solo" style="background-color: #7abbad;"></span>
+              </label>
+              <label class="label_box">NVe2
+                <span class="legenda_solo" style="background-color: #70b4ae;"></span>
+              </label>
+              <label class="label_box">RLd5
+                <span class="legenda_solo" style="background-color: #66adb0;"></span>
+              </label>
+              <label class="label_box">RLd6
+                <span class="legenda_solo" style="background-color: #5ca6b2;"></span>
+              </label>
+
+              <label class="label_box">VGk 1
+                <span class="legenda_solo" style="background-color: #4898b5;"></span>
+              </label>
+              <label class="label_box">CXbd2
+                <span class="legenda_solo" style="background-color: #3e91b7;"></span>
+              </label>
+              <label class="label_box">FXd1
+                <span class="legenda_solo" style="background-color: #358ab9;"></span>
+              </label>
+            </section>
+          </section>
+        </div> <!-- SUBSECTION ENDING -->
+        <button class="accordion" style="background-color: #fff;">Vegetação <!-- SUBSECTION BEGGINING -->
+          <div class="icon">
+            <img src="./icons/chevron-down.svg" class="icon-expand">
+            <img src="./icons/chevron-up.svg" class="icon-retract">
+          </div>
+        </button>
+        <div class="panel"> 
+          <section class="layer-labels">
+            <section>
+              <label class="container">Brejo RR
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('brejo_rr')">
+                <span class="brejo_rr"></span>
+              </label>
+              <label class="container">Cerrado RR
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('cerrado_rr')">
+                <span class="cerrado_rr"></span>
+              </label>
+              <label class="container">Rocha
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('rel_rocha_a')">
+                <span class="rocha"></span>
+              </label>
+            </section>
+          </section>
+        </div> <!-- SUBSECTION ENDING -->
+      </div> <!-- SECTION ENDING -->
+
+      <button class="accordion">Estrutura agrária <!-- SECTION BEGGINING -->
+        <div class="icon">
+          <img src="./icons/chevron-down.svg" class="icon-expand">
+          <img src="./icons/chevron-up.svg" class="icon-retract">
+        </div>
+      </button>
+      <div class="panel"> 
+        <button class="accordion" style="background-color: #fff;">Áreas protegidas <!-- SUBSECTION BEGGINING -->
+        <div class="icon">
+          <img src="./icons/chevron-down.svg" class="icon-expand">
+          <img src="./icons/chevron-up.svg" class="icon-retract">
+        </div>
+      </button>
+      <div class="panel"> 
+        <section class="layer-labels">
+          <section>
+            <label class="container">Unidades de conservação
+              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <span class="#"></span>
+            </label>
+            <label class="container">Unidades em estudo
+              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <span class="#"></span>
+            </label>
+            <label class="container">Terras indígenas
+              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('terras_indigenas')">
+              <span class="terras_indigenas"></span>
+            </label>
+            <label class="container">Outras áreas protegidas
+              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <span class="#"></span>
+            </label>
+          </section>
+        </section>
+      </div> <!-- SUBSECTION ENDING -->
+      <button class="accordion" style="background-color: #fff;">Assentamentos <!-- SUBSECTION BEGGINING -->
+        <div class="icon">
+          <img src="./icons/chevron-down.svg" class="icon-expand">
+          <img src="./icons/chevron-up.svg" class="icon-retract">
+        </div>
+      </button>
+      <div class="panel"> 
+        <section class="layer-labels">
+          <section>
+
+          </section>
+        </section>
+      </div> <!-- SUBSECTION ENDING -->     
+
+      <button class="accordion" style="background-color: #fff;">Área Militar <!-- SUBSECTION BEGGINING -->
         <div class="icon">
           <img src="./icons/chevron-down.svg" class="icon-expand">
           <img src="./icons/chevron-up.svg" class="icon-retract">
@@ -28,9 +413,8 @@
             </label>
           </section>
         </section>
-      </div> <!-- FIRST SECTION ENDING -->
-
-      <button class="accordion">Áreas consolidadas <!-- FIRST SECTION BEGGING -->
+      </div> <!-- SUBSECTION ENDING -->
+      <button class="accordion" style="background-color: #fff;">CAR <!-- SUBSECTION BEGGINING -->
         <div class="icon">
           <img src="./icons/chevron-down.svg" class="icon-expand">
           <img src="./icons/chevron-up.svg" class="icon-retract">
@@ -39,34 +423,16 @@
       <div class="panel"> 
         <section class="layer-labels">
           <section>
-            <label class="container">Área consolidada RR
-              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('area_consolidada')">
-              <span class="area_consolidada_rr" ></span>
-            </label>
-            <label class="container">Área consolidada BV
-              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('Area_consolidade_BV')">
-              <span class="area_consolidada_bv"></span>
+            <label class="container">Propriedades rurais
+              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <span class="#"></span>
             </label>
           </section>
         </section>
-      </div> <!-- FIRST SECTION ENDING -->
+      </div> <!-- SUBSECTION ENDING -->  
+      </div> <!-- SECTION ENDING -->    
 
-      <button class="accordion">Assentamentos <!-- SECOND SECTION BEGGING -->
-        <div class="icon">
-          <img src="./icons/chevron-down.svg" class="icon-expand">
-          <img src="./icons/chevron-up.svg" class="icon-retract">
-        </div>
-      </button>
-      <div class="panel"> 
-        <section class="layer-labels">
-          
-          <section>
-            
-          </section>
-        </section>
-      </div> <!-- SECOND SECTION ENDING -->     
-
-      <button class="accordion"> Biomas <!-- THIRD SECTION BEGGING -->
+      <button class="accordion">Infraestrutura <!-- SECTION BEGGINING -->
         <div class="icon">
           <img src="./icons/chevron-down.svg" class="icon-expand">
           <img src="./icons/chevron-up.svg" class="icon-retract">
@@ -75,34 +441,9 @@
       <div class="panel"> 
         <section class="layer-labels">
           <section>
-            <label class="container">Brejo RR
-              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('brejo_rr')">
-              <span class="brejo_rr"></span>
-            </label>
-            <label class="container">Cerrado RR
-              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('cerrado_rr')">
-              <span class="cerrado_rr"></span>
-            </label>
-            <label class="container">Rocha
-              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('rel_rocha_a')">
-              <span class="rocha"></span>
-            </label>
-          </section>
-        </section>
-      </div> <!-- THIRD SECTION ENDING -->
-
-      <button class="accordion">Cidades e estradas <!-- FOUTH SECTION BEGGING -->
-        <div class="icon">
-          <img src="./icons/chevron-down.svg" class="icon-expand">
-          <img src="./icons/chevron-up.svg" class="icon-retract">
-        </div>
-      </button>
-      <div class="panel"> 
-        <section class="layer-labels">
-          <section>
-            <label class="container">Limites municipais
-              <input type="checkbox"  onclick="hideOrShowLayer('limites_municipais')">
-              <span class="limites_municipais"></span>
+            <label class="container">Cidades
+              <input type="checkbox"  onclick="hideOrShowLayer('#')">
+              <span class="#"></span>
             </label>
             <label class="container">Estradas
               <input type="checkbox"  onclick="hideOrShowLayer('estradas')">
@@ -120,238 +461,168 @@
               <input type="checkbox"  onclick="hideOrShowLayer('trilha_picada')">
               <span class="picadas"></span>
             </label>
+            <label class="container">Pontes
+              <input type="checkbox"  onclick="hideOrShowLayer('#')">
+              <span class="#"></span>
+            </label>
+            <label class="container">Aeródromos
+              <input type="checkbox"  onclick="hideOrShowLayer('#')">
+              <span class="#"></span>
+            </label>
+            <label class="container">Antenas de celular
+              <input type="checkbox"  onclick="hideOrShowLayer('#')">
+              <span class="#"></span>
+            </label>  
           </section>
         </section>
-      </div> <!-- FOUTH SECTION ENDING -->
+        <button class="accordion" style="background-color: #fff;">Energia <!-- SUBSECTION BEGGINING -->
+          <div class="icon">
+            <img src="./icons/chevron-down.svg" class="icon-expand">
+            <img src="./icons/chevron-up.svg" class="icon-retract">
+          </div>
+        </button>
+        <div class="panel"> 
+          <section class="layer-labels">
+            <section>
+              <label class="container">Centrais geradoras
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Usinas hidrelétricas
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Usinas Termoelétricas
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Linhas de Transmissão
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+            </section>
+          </section>
+        </div> <!-- SUBSECTION ENDING -->
+      </div> <!-- SECTION ENDING -->
 
-      <button class="accordion">Demarcações indígenas<!-- FIFTH SECTION BEGGING -->
+      <button class="accordion">Socioeconômico <!-- SECTION BEGGINING -->
         <div class="icon">
           <img src="./icons/chevron-down.svg" class="icon-expand">
           <img src="./icons/chevron-up.svg" class="icon-retract">
         </div>
       </button>
       <div class="panel"> 
-        <section class="layer-labels">
-          
-          <section>
-            <label class="container">Demarcações indígenas
-              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('terras_indigenas')">
-              <span class="terras_indigenas"></span>
-            </label>
+        <button class="accordion" style="background-color: #fff;">População <!-- SUBSECTION BEGGINING -->
+          <div class="icon">
+            <img src="./icons/chevron-down.svg" class="icon-expand">
+            <img src="./icons/chevron-up.svg" class="icon-retract">
+          </div>
+        </button>
+        <div class="panel"> 
+          <section class="layer-labels">
+            <section>
+              <label class="container">População total
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">População rural
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">População urbana
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+            </section>
           </section>
-        </section>
-      </div> <!-- FIFTH SECTION ENDING -->
-
-      <button class="accordion">Hidrografia <!-- SIXTH SECTION BEGGING -->
-        <div class="icon">
-          <img src="./icons/chevron-down.svg" class="icon-expand">
-          <img src="./icons/chevron-up.svg" class="icon-retract">
-        </div>
-      </button>
-      <div class="panel"> 
-        <section class="layer-labels">
-          <section>
-            <label class="container">Hidrografia
-              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('hidrografia')">
-              <span class="hidrografia"></span>
-            </label>
-            <label class="container">Bacias
-              <input type="checkbox" onclick="hideOrShowLayer('none')">
-              <span class="bacias"></span>
-            </label>
+        </div> <!-- SUBSECTION ENDING -->
+        <button class="accordion" style="background-color: #fff;">Renda e pobreza rural <!-- SUBSECTION BEGGINING -->
+          <div class="icon">
+            <img src="./icons/chevron-down.svg" class="icon-expand">
+            <img src="./icons/chevron-up.svg" class="icon-retract">
+          </div>
+        </button>
+        <div class="panel"> 
+          <section class="layer-labels">
+            <section>
+              <label class="container">Renda até 2 salários mínimos mensais dos estabelecimentos agropecuários
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Renda entre 2  a 10 salários mínimos mensais dos estabelecimentos agropecuários
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Renda entre 10 a 200 salários mínimos mensais dos estabelecimentos agropecuários
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Renda acima de 200 salários mínimos mensais dos estabelecimentos agropecuários
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+            </section>
           </section>
-        </section>
-      </div> <!-- SIXTH SECTION ENDING -->
-
-
-      <button class="accordion">Tipos de solo <!-- SEVENTH SECTION BEGGING -->
-        <div class="icon">
-          <img src="./icons/chevron-down.svg" class="icon-expand">
-          <img src="./icons/chevron-up.svg" class="icon-retract">
-        </div>
-      </button>
-      <div class="panel"> 
-        <label class="container">Mostrar/Não mostrar
-          <input type="checkbox" checked="checked" onclick="hideOrShowLayer('solos')">
-          <span class="solos"></span>
-        </label>
-        <br>
-        <section class="soil-labels">
-          <section>
-            
-            <label class="label_box">GXbd3
-              <span class="legenda_solo" style="background-color: #d7191c;"></span>
-            </label>
-            <label class="label_box">SNo1
-              <span class="legenda_solo" style="background-color: #da2421;"></span>
-            </label>
-            <label class="label_box">SXd1
-              <span class="legenda_solo" style="background-color: #dd3026;"></span>
-            </label>
-            <label class="label_box">GXbd1
-              <span class="legenda_solo" style="background-color: #e03b2c;"></span>
-            </label>
-            <label class="label_box">RQg1
-              <span class="legenda_solo" style="background-color: #e34731;"></span>
-            </label>
-            <label class="label_box">GXbd2
-              <span class="legenda_solo" style="background-color: #e65236;"></span>
-            </label>
-            <label class="label_box">LVd1
-              <span class="legenda_solo" style="background-color: #e95e3c;"></span>
-            </label>
-            <label class="label_box">LAd1
-              <span class="legenda_solo" style="background-color: #ec6941;"></span>
-            </label>
-            <label class="label_box">CXbd1
-              <span class="legenda_solo" style="background-color: #ef7546;"></span>
-            </label>
-            <label class="label_box">NVe1
-              <span class="legenda_solo" style="background-color: #f2804c;"></span>
-            </label>
-            <label class="label_box">RLd1
-              <span class="legenda_solo" style="background-color: #f58c51;"></span>
-            </label>
-            <label class="label_box">RLd2
-              <span class="legenda_solo" style="background-color: #f89756;"></span>
-            </label>
-            <label class="label_box">PVAd1
-              <span class="legenda_solo" style="background-color: #fba35c;"></span>
-            </label>
+        </div> <!-- SUBSECTION ENDING -->
+        <button class="accordion" style="background-color: #fff;">Indicadores sociais <!-- SUBSECTION BEGGINING -->
+          <div class="icon">
+            <img src="./icons/chevron-down.svg" class="icon-expand">
+            <img src="./icons/chevron-up.svg" class="icon-retract">
+          </div>
+        </button>
+        <div class="panel"> 
+          <section class="layer-labels">
+            <section>
+              <label class="container">Índice de desenvolvimento humano
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Índice de desenvolvimento da educação básica (IDEB) séries iniciais
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Índice de desenvolvimento da educação básica (IDEB) séries finais
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Unidade básica de saúde (UBS)
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+            </section>
           </section>
-
-          <section>
-            <label class="label_box">PVAd2
-              <span class="legenda_solo" style="background-color: #fdae61;"></span>
-            </label>
-            <label class="label_box">RLd3
-              <span class="legenda_solo" style="background-color: #feb468;"></span>
-            </label>
-            <label class="label_box">LVAd1
-              <span class="legenda_solo" style="background-color: #febb6f;"></span>
-            </label>
-            <label class="label_box">RQg2
-              <span class="legenda_solo" style="background-color: #fec177;"></span>
-            </label>
-            <label class="label_box">GXbd5
-              <span class="legenda_solo" style="background-color: #fec77e;"></span>
-            </label>
-            <label class="label_box">LAd2
-              <span class="legenda_solo" style="background-color: #fecd85;"></span>
-            </label>
-            <label class="label_box">LVd2
-              <span class="legenda_solo" style="background-color: #fed48c;"></span>
-            </label>
-            <label class="label_box">LVd3
-              <span class="legenda_solo" style="background-color: #ffda94;"></span>
-            </label>
-            <label class="label_box">PAd1
-              <span class="legenda_solo" style="background-color: #ffe09b;"></span>
-            </label>
-            <label class="label_box">PVe1
-              <span class="legenda_solo" style="background-color: #ffe6a2;"></span>
-            </label>
-            <label class="label_box">LVd4
-              <span class="legenda_solo" style="background-color: #ffeda9;"></span>
-            </label>
-            <label class="label_box">LVAd4
-              <span class="legenda_solo" style="background-color: #fff3b1;"></span>
-            </label>
-            <label class="label_box">PVAd3
-              <span class="legenda_solo" style="background-color: #fff9b8;"></span>
-            </label>
+        </div> <!-- SUBSECTION ENDING -->
+        <button class="accordion" style="background-color: #fff;">PIB <!-- SUBSECTION BEGGINING -->
+          <div class="icon">
+            <img src="./icons/chevron-down.svg" class="icon-expand">
+            <img src="./icons/chevron-up.svg" class="icon-retract">
+          </div>
+        </button>
+        <div class="panel"> 
+          <section class="layer-labels">
+            <section>
+              <label class="container">Produto Interno Bruto (PIB)
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Valor adicionado bruto da agropecuária (PIB AGRO)
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">PIB AGRO em relação ao PIB
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">PIB per capita
+                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+            </section>
           </section>
+        </div> <!-- SUBSECTION ENDING -->
+      </div> <!-- SECTION ENDING -->
 
-          <section>
-            <label class="label_box">LVAd4
-              <span class="legenda_solo" style="background-color: #ffffbf;"></span>
-            </label>
-            <label class="label_box">PAd2
-              <span class="legenda_solo" style="background-color: #f9fdbd;"></span>
-            </label>
-            <label class="label_box">EKg1
-              <span class="legenda_solo" style="background-color: #f3fabb;"></span>
-            </label>
-            <label class="label_box">RQg3
-              <span class="legenda_solo" style="background-color: #ecf8b9;"></span>
-            </label>
-            <label class="label_box">RQg4
-              <span class="legenda_solo" style="background-color: #e6f5b7;"></span>
-            </label>
-            <label class="label_box">ESKu1
-              <span class="legenda_solo" style="background-color: #dff2b5;"></span>
-            </label>
-            <label class="label_box">RLd7
-              <span class="legenda_solo" style="background-color: #d9f0b3;"></span>
-            </label>
-            <label class="label_box">LAd6
-              <span class="legenda_solo" style="background-color: #d2edb1;"></span>
-            </label>
-            <label class="label_box">RLd4
-              <span class="legenda_solo" style="background-color: #cceaaf;"></span>
-            </label>
-            <label class="label_box">GXbd4
-              <span class="legenda_solo" style="background-color: #c5e8ac;"></span>
-            </label>
-            <label class="label_box">LAd3
-              <span class="legenda_solo" style="background-color: #bfe5ab;"></span>
-            </label>
-            <label class="label_box">LAd4
-              <span class="legenda_solo" style="background-color: #b8e3a8;"></span>
-            </label>
-            <label class="label_box">LVAd2
-              <span class="legenda_solo" style="background-color: #b2e0a6;"></span>
-            </label>
-          </section>
-
-          <section>
-            <label class="label_box">LVd6
-              <span class="legenda_solo" style="background-color: #bfe5ae;"></span>
-            </label>
-            
-            <label class="label_box">PVAd4
-              <span class="legenda_solo" style="background-color: #bfe5ac;"></span>
-            </label>
-            <label class="label_box">PVAd5
-              <span class="legenda_solo" style="background-color: #bfe5ad;"></span>
-            </label>
-            <label class="label_box">LVAd3
-              <span class="legenda_solo" style="background-color: #abdda4;"></span>
-            </label>
-            <label class="label_box">LAd5
-              <span class="legenda_solo" style="background-color: #97cfa8;"></span>
-            </label>
-            <label class="label_box">LVd5
-              <span class="legenda_solo" style="background-color: #8ec9a9;"></span>
-            </label>
-            
-            <label class="label_box">FFc1
-              <span class="legenda_solo" style="background-color: #7abbad;"></span>
-            </label>
-            <label class="label_box">NVe2
-              <span class="legenda_solo" style="background-color: #70b4ae;"></span>
-            </label>
-            <label class="label_box">RLd5
-              <span class="legenda_solo" style="background-color: #66adb0;"></span>
-            </label>
-            <label class="label_box">RLd6
-              <span class="legenda_solo" style="background-color: #5ca6b2;"></span>
-            </label>
-            
-            <label class="label_box">VGk 1
-              <span class="legenda_solo" style="background-color: #4898b5;"></span>
-            </label>
-            <label class="label_box">CXbd2
-              <span class="legenda_solo" style="background-color: #3e91b7;"></span>
-            </label>
-            <label class="label_box">FXd1
-              <span class="legenda_solo" style="background-color: #358ab9;"></span>
-            </label>
-          </section>
-        </section>
-      </div> <!-- SEVENTH SECTION ENDING -->
-
-      <button class="accordion">UCS <!-- EIGHTH SECTION BEGGING -->
+      <button class="accordion">Programas sociais <!-- SECTION BEGGINING -->
         <div class="icon">
           <img src="./icons/chevron-down.svg" class="icon-expand">
           <img src="./icons/chevron-up.svg" class="icon-retract">
@@ -360,11 +631,40 @@
       <div class="panel"> 
         <section class="layer-labels">
           <section>
-           
+            <label class="container">Bolsa família
+              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <span class="#"></span>
+            </label>
           </section>
-          
         </section>
-      </div> <!-- EIGHTH SECTION ENDING -->
+      </div> <!-- SECTION ENDING -->
+
+
+      
+      <button class="accordion">Mapa de base <!-- SECTION BEGGINING -->
+        <div class="icon">
+          <img src="./icons/chevron-down.svg" class="icon-expand">
+          <img src="./icons/chevron-up.svg" class="icon-retract">
+        </div>
+      </button>
+      <div class="panel"> 
+        <section class="layer-labels">
+          <section>
+           <label class="container">Em branco
+              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <span class="#"></span>
+            </label>
+            <label class="container">Bing Aerial
+              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <span class="#"></span>
+            </label>
+            <label class="container">Bing Road Map
+              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <span class="#"></span>
+            </label>
+          </section>
+        </section>
+      </div> <!-- SECTION ENDING -->
 
     </div> <!-- MENU ENDING -->
   </section> <!-- BOX ENDING -->

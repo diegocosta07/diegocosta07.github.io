@@ -1,5 +1,5 @@
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiZGllZ29jb3N0YTc3MTEiLCJhIjoiY2s5eXJvczA1MHk3bDNtcGI5NHZvYWdlMSJ9.AvojtClJoCb29eZW_PY8tg';
+mapboxgl.accessToken = 'pk.eyJ1IjoiZGllZ29jb3N0YTc3MTEiLCJhIjoiY2p1bGJ0ZHNzMjU5dTQ5cHBybnB5N2h3ZiJ9.mEmQDBEUJLPF66aPKYqQLw';
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/satellite-v9',
@@ -234,7 +234,7 @@ map.on('load', function() {
 
     map.addLayer({
         id: 'limites_municipais',
-        type: 'fill',
+        type: 'line',
         source: {
             type: 'vector',
             url: 'mapbox://diegocosta7711.1ckmjr21'
@@ -243,9 +243,7 @@ map.on('load', function() {
             'visibility': 'none'
         },
         paint: {
-            'fill-color':"hsl(114°, 80%, 12%)",
-            
-            'fill-outline-color':'#fff'
+            'line-color':"hsl(114°, 80%, 12%)"
         },
         'source-layer': 'limites_municipais'
     });
@@ -358,15 +356,14 @@ function loadProperty() {
     
     map.addLayer({
         'id': 'property',
-        'type': 'fill',
+        'type': 'line',
         'source': 'property',
         'layout': {
             'visibility': 'visible'
         },
         'paint': {
-            'fill-color': '#fff',
-            'fill-opacity': 0.3,
-            'fill-outline-color': '#000'
+            'line-color': '#fff',
+            'line-stroke': 3
         }
     });
 
