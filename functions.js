@@ -147,9 +147,38 @@ map.on('load', function() {
             'visibility': 'none'
         },
         paint: {
-            'fill-color': "hsl(242, 100%, 47%)"
-        },
-        'source-layer': 'bacias'
+            'fill-color': [
+            'interpolate',
+            ['linear'],
+            ['get', 'ORDEM'],
+            1,'#57a0cf',
+			2,'#a3cce3', 
+			3,'#1e6eb3',
+			4,'#3383bf',
+			5,'#dfecf8',
+			6,'#0d58a1',
+			7,'#084b94',
+			8,'#d0e2f3',
+			9,'#3e8ec4',
+			10,'#4a97c9',
+			11,'#b0d2e8',
+			12,'#1563aa',
+			13,'#f7fbff',
+			14,'#2879b9',
+			15,'#c8ddf0',
+			16,'#eff6fd',
+			17,'#e7f1fa',
+			18,'#bcd7ec',
+			19,'#d8e7f5',
+			20,'#83bcdc',
+			21,'#73b3d8',
+			22,'#94c5df',
+			23,'#083d7f',
+			24,'#64a9d4'
+			],
+			'fill-outline-color':'#000000',
+		},           
+        'source-layer': 'bacias',
     });
 
     map.addLayer({
@@ -179,7 +208,7 @@ map.on('load', function() {
             'visibility': 'visible'
         },
         paint: {
-            'fill-color': "hsl(322°, 73%, 61%)"
+            'fill-color': "hsl(44°, 98%, 50%)"
         },
         'source-layer': 'area_consolidada'
     });
@@ -318,6 +347,18 @@ map.on('load', function() {
         new mapboxgl.Popup()
         .setLngLat(e.lngLat)
         .setHTML(e.features[0].properties["SIGLA"])
+        .addTo(map);
+    });
+    map.on('click', 'terras_indigenas', function(e) {
+        new mapboxgl.Popup()
+        .setLngLat(e.lngLat)
+        .setHTML(e.features[0].properties["NOMEABREV"])
+        .addTo(map);
+    });
+    map.on('click', 'bacias', function(e) {
+        new mapboxgl.Popup()
+        .setLngLat(e.lngLat)
+        .setHTML(e.features[0].properties["NOME_BAC"])
         .addTo(map);
     });
 
