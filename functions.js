@@ -338,20 +338,6 @@ function analysisShape(file) {
     if(file["length"] === 0) {
         return;
     }
-	console.log(file[0]);
-    if(file[0].type !== "application/geo+json") {
-        var warning = document.createElement("P");
-        warning.innerHTML = "Desculpe mas apenas arquivos do tipo geojson são aceitos.";
-        warning.id = "warning_id";
-        document.getElementById("analysis").appendChild(warning); 
-
-        return;
-    }
-
-    var element = document.getElementById("warning_id");
-    if(element){
-        element.remove(); 
-    }
     
     const url = "https://backend-rr-solos-mapa.herokuapp.com/readfile";
     var xhr = new XMLHttpRequest();
