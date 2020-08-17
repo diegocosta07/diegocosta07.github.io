@@ -338,6 +338,7 @@ function analysisShape(file) {
     if(file["length"] === 0) {
         return;
     }
+	console.log(file[0]);
     if(file[0].type !== "application/geo+json") {
         var warning = document.createElement("P");
         warning.innerHTML = "Desculpe mas apenas arquivos do tipo geojson são aceitos.";
