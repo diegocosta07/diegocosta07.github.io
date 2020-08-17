@@ -147,6 +147,23 @@ body {
   font-size: 12px;
 }
 
+#distance {
+  background: #fff;
+  position: absolute;
+  bottom: 6%;
+  left: 1%;
+  border-radius: 3px;
+  width: 98%;
+  height: 35%;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  font-family: 'Open Sans', sans-serif;
+}
+
+#distance p {
+  color: #e82e2e;
+  font-size: 12px;
+}
+
 .h3-header {
   text-align: center;
   font-size: 15px;

@@ -9,6 +9,14 @@ var map = new mapboxgl.Map({
             maxBounds: ([[-69.935304,-13.287696],[-53.768616,16.067365]])
         });
 
+var directions = new MapboxDirections({
+        accessToken: mapboxgl.accessToken,
+        steps: false,
+        geometries: 'polyline',
+        profile: 'driving',
+        controls: { instructions: false }
+      });
+
 var shapefile,name,coordinates;
 
 map.on('load', function() {
@@ -21,7 +29,7 @@ map.on('load', function() {
             url: 'mapbox://diegocosta7711.7gdn6lnk'
         },
         layout: {
-            'visibility': 'visible'
+            'visibility': 'none'
         },
             //filter: ['==', 'SIGLA', 'GXbd4'],
         paint: {
@@ -95,7 +103,7 @@ map.on('load', function() {
             url: 'mapbox://diegocosta7711.d9y4274j'
         },
         layout: {
-            'visibility': 'visible'
+            'visibility': 'none'
         },
         paint: {
             'fill-color': "hsl(79, 72%, 37%)"
@@ -111,28 +119,12 @@ map.on('load', function() {
             url: 'mapbox://diegocosta7711.d7s1lxm8'
         },
         layout: {
-            'visibility': 'visible'
+            'visibility': 'none'
         },
         paint: {
             'fill-color': "hsl(26, 63%, 33%)"
         },
         'source-layer': 'terras_indigenas'
-    });
-
-    map.addLayer({
-        id: 'hidrografia',
-        type: 'fill',
-        source: {
-            type: 'vector',
-            url: 'mapbox://diegocosta7711.4xpms2f0'
-        },
-        layout: {
-            'visibility': 'visible'
-        },
-        paint: {
-            'fill-color': "hsl(242, 100%, 47%)"
-        },
-        'source-layer': 'hidrografia'
     });
 
     map.addLayer({
@@ -180,72 +172,6 @@ map.on('load', function() {
         'source-layer': 'bacias',
     });
 
-
-
-    map.addLayer({
-        id: 'brejo_rr',
-        type: 'fill',
-        source: {
-            type: 'vector',
-            url: 'mapbox://diegocosta7711.5qmmn1h9'
-        },
-        layout: {
-            'visibility': 'visible'
-        },
-        paint: {
-            'fill-color': "hsl(298°, 38%, 43%)"
-        },
-        'source-layer': 'brejo_rr'
-    });
-
-    map.addLayer({
-        id: 'rel_rocha_a',
-        type: 'fill',
-        source: {
-            type: 'vector',
-            url: 'mapbox://diegocosta7711.2bg5ux38'
-        },
-        layout: {
-            'visibility': 'visible'
-        },
-        paint: {
-            'fill-color': "hsl(295°, 5%, 18%)"
-        },
-        'source-layer': 'rel_rocha_a'
-    });
-
-    map.addLayer({
-        id: 'cerrado_rr',
-        type: 'fill',
-        source: {
-            type: 'vector',
-            url: 'mapbox://diegocosta7711.5fglqg4j'
-        },
-        layout: {
-            'visibility': 'visible'
-        },
-        paint: {
-            'fill-color': "hsl(299°, 52%, 26%)"
-        },
-        'source-layer': 'cerrado_rr'
-    });
-
-    map.addLayer({
-        id: 'CAR_Boa_vista',
-        type: 'fill',
-        source: {
-            type: 'vector',
-            url: 'mapbox://diegocosta7711.9wbayrkc'
-        },
-        layout: {
-            'visibility': 'none'
-        },
-        paint: {
-            'fill-color': "hsl(352°, 61%, 23%)"
-        },
-        'source-layer': 'CAR_Boa_vista'
-    });
-
     map.addLayer({
         id: 'limites_municipais',
         type: 'line',
@@ -257,73 +183,10 @@ map.on('load', function() {
             'visibility': 'visible'
         },
         paint: {
-            'line-color':"hsl(352°, 0%, 0%)"
+            'line-color':"hsl(352°, 0%, 0%)",
+            'line-width': 2
         },
         'source-layer': 'limites_municipais'
-    });
-
-    map.addLayer({
-        id: 'tra_arruamento_l',
-        type: 'line',
-        source: {
-            type: 'vector',
-            url: 'mapbox://diegocosta7711.ciyvaaqt'
-        },
-        layout: {
-            'visibility': 'none'
-        },
-        paint: {
-            'line-color':"#c2c2bc",
-        },
-        'source-layer': 'tra_arruamento_l'
-    });
-
-    map.addLayer({
-        id: 'trecho_rodoviario_l',
-        type: 'line',
-        source: {
-            type: 'vector',
-            url: 'mapbox://diegocosta7711.3t75uxa6'
-        },
-        layout: {
-            'visibility': 'none'
-        },
-        paint: {
-            'line-color':"#942503",
-        },
-        'source-layer': 'trecho_rodoviario_l'
-    });
-
-    map.addLayer({
-        id: 'estradas',
-        type: 'line',
-        source: {
-            type: 'vector',
-            url: 'mapbox://diegocosta7711.2kv37yjt'
-        },
-        layout: {
-            'visibility': 'none'
-        },
-        paint: {
-            'line-color': "#5e5e5e"
-        },
-        'source-layer': 'estradas'
-    });
-
-    map.addLayer({
-        id: 'trilha_picada',
-        type: 'line',
-        source: {
-            type: 'vector',
-            url: 'mapbox://diegocosta7711.2p05ch40'
-        },
-        layout: {
-            'visibility': 'none'
-        },
-        paint: {
-            'line-color':"#dbdb4d",
-        },
-        'source-layer': 'trilha_picada'
     });
 
     // When a click event occurs on a feature in the states layer, open a popup at the
@@ -389,7 +252,7 @@ function loadProperty() {
         },
         'paint': {
             'line-color': '#fff',
-            'line-stroke': 3
+            'line-width': 2
         }
     });
 
@@ -419,6 +282,31 @@ function hideOrShowLayer(name) {
     }
 }
 
+var callRoute = 0; //if 0 when clicked turns on when 1 turns off
+
+function showRoute() {
+    if(callRoute == 0){
+        map.addControl(directions,'bottom-right');
+        var instructions = document.createElement("P");
+        instructions.innerHTML = "Clique em dois lugares no mapa para calcular a distância";
+        instructions.id = "instructions";
+        document.getElementById("distance").appendChild(instructions); 
+        directions.on('route', function(ev) {
+            distance = ev.route[0]['distance']/1000;
+            instructions.innerHTML = "Distância: "+distance.toFixed(2)+" km";
+        });
+        callRoute = 1;
+    } else {        
+        map.removeControl(directions,'bottom-right');
+        var element = document.getElementById("instructions");
+        if(element){
+            element.remove(); 
+        }
+        //map.removeSource(directions);
+        callRoute = 0
+    }
+}
+
 function loadInfos(){
     const url1 = "https://api.mapbox.com/v4/diegocosta7711.7gdn6lnk/tilequery/";
     const url2 = ".json?limit=20&access_token=pk.eyJ1IjoiZGllZ29jb3N0YTc3MTEiLCJhIjoiY2p1bGJ0ZHNzMjU5dTQ5cHBybnB5N2h3ZiJ9.mEmQDBEUJLPF66aPKYqQLw"
@@ -437,8 +325,6 @@ function loadInfos(){
             }
         }
     };
-
-    
 
     for(let i=0; i<coordinates[0].length; i++) {
         args = String(coordinates[0][i][0]) +","+ String(coordinates[0][i][1])

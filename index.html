@@ -5,6 +5,12 @@
         <title>Mapa de Roraima</title>
         <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
         <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js"></script>
+        <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.1/mapbox-gl-directions.js"></script>
+	    <link
+	      rel="stylesheet"
+	      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.1/mapbox-gl-directions.css"
+	      type="text/css"
+	    />
         <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css" rel="stylesheet"/>
         <link rel="stylesheet" type="text/css" href="./styles.css" />
         <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -22,11 +28,11 @@
         <section class="layer-labels">
           <section>
             <label class="container">Limites municipais
-              <input type="checkbox" checked="checked"  onclick="hideOrShowLayer('limites_municipais')">
+              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('limites_municipais')">
               <span class="limites_municipais"></span>
             </label>
             <label class="container">Sedes municipais
-              <input type="checkbox" checked="checked"  onclick="hideOrShowLayer('#')">
+              <input type="checkbox"   onclick="hideOrShowLayer('#')">
               <span class="#"></span>
             </label>
           </section>
@@ -49,51 +55,51 @@
           <section class="layer-labels">
             <section>
               <label class="container">Janeiro
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Fevereiro
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Março
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Abril
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Maio
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Junho
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Julho
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Agosto
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Setembro
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Outubro
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Novembro
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Dezembro
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>       
             </section>
@@ -114,13 +120,9 @@
             <img src="./icons/chevron-up.svg" class="icon-retract">
           </div>
         </button>
-        <div class="panel"> 
-          <label class="container">Apitidão
-            <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
-            <span class="#"></span>
-          </label>
+        <div class="panel">
           <label class="container">Mostrar/Não mostrar Classificação
-            <input type="checkbox" checked="checked" onclick="hideOrShowLayer('solos')">
+            <input type="checkbox" onclick="hideOrShowLayer('solos')">
             <span class="solos"></span>
           </label>
           <br>
@@ -307,7 +309,7 @@
       </button>
       <div class="panel">
 	      <label class="container">Mostrar/Não mostrar Relevo
-	            <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	            <input type="checkbox" onclick="hideOrShowLayer('#')">
 	            <span class="solos"></span>
 	      </label>
 	  </div> <!-- SECTION ENDING -->
@@ -322,11 +324,11 @@
         <section class="layer-labels">
           <section>
             <label class="container">De topo de morro
-              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <input type="checkbox"  onclick="hideOrShowLayer('#')">
               <span class="#"></span>
             </label>
             <label class="container">De drenagem
-              <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <input type="checkbox"  onclick="hideOrShowLayer('#')">
               <span class="#"></span>
             </label>
           </section>
@@ -476,23 +478,11 @@
             <img src="./icons/chevron-up.svg" class="icon-retract">
           </div>
         </button>
-        <div class="panel"> 
-          <section class="layer-labels">
-            <section>
-              <label class="container">Brejo RR
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('brejo_rr')">
-                <span class="brejo_rr"></span>
-              </label>
-              <label class="container">Cerrado RR
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('cerrado_rr')">
-                <span class="cerrado_rr"></span>
-              </label>
-              <label class="container">Rocha
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('rel_rocha_a')">
-                <span class="rocha"></span>
-              </label>
-            </section>
-          </section>
+        <div class="panel">
+	      <label class="container">Mostrar/Não mostrar vegetação
+	            <input type="checkbox" onclick="hideOrShowLayer('#')">
+	            <span class="solos"></span>
+	      </label>
         </div> <!-- SUBSECTION ENDING -->
 
          <button class="accordion">Desmatamento <!-- SECTION BEGGINING -->
@@ -502,6 +492,60 @@
           </div>
         </button>
         <div class="panel">
+        	<button class="accordion" style="background-color: #fff;">1970 <!-- SUBSECTION BEGGINING -->
+	          <div class="icon">
+	            <img src="./icons/chevron-down.svg" class="icon-expand">
+	            <img src="./icons/chevron-up.svg" class="icon-retract">
+	          </div>
+	        </button>
+	        <div class="panel"> 
+	        	<section class="soil-labels">
+                <section>
+		        	<label class="container">1970
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
+	                <span class="#"></span>
+	              </label>
+	              <label class="container">1971
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
+	                <span class="#"></span>
+	              </label>
+	              <label class="container">1972
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
+	                <span class="#"></span>
+	              </label>
+	              <label class="container">1973
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
+	                <span class="#"></span>
+	              </label>
+	              <label class="container">1974
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
+	                <span class="#"></span>
+	              </label>
+	          </section>
+          	  <section>
+	              <label class="container">1975
+                  <input type="checkbox"  onclick="hideOrShowLayer('#')">
+                  <span class="#"></span>
+	              </label>
+	              <label class="container">1976
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
+	                <span class="#"></span>
+	              </label>
+	              <label class="container">1977
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
+	                <span class="#"></span>
+	              </label>
+	              <label class="container">1978
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
+	                <span class="#"></span>
+	              </label>
+	              <label class="container">1979
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
+	                <span class="#"></span>
+	              </label>
+               </section>
+           </section>
+	        </div> <!--SUBSECTION ENDING -->
         	<button class="accordion" style="background-color: #fff;">1980 <!-- SUBSECTION BEGGINING -->
 	          <div class="icon">
 	            <img src="./icons/chevron-down.svg" class="icon-expand">
@@ -512,48 +556,49 @@
 	        	<section class="soil-labels">
                 <section>
 		        	<label class="container">1980
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1981
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1982
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1983
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1984
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	          </section>
           	  <section>
 	              <label class="container">1985
-                  <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                  <input type="checkbox"  onclick="hideOrShowLayer('#')">
                   <span class="#"></span>
 	              </label>
 	              <label class="container">1986
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1987
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1988
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1989
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
                </section>
+           </section>
 	        </div> <!--SUBSECTION ENDING -->
 
 	        <button class="accordion" style="background-color: #fff;">1990 <!-- SUBSECTION BEGGINING -->
@@ -566,48 +611,49 @@
 	        	<section class="soil-labels">
                 <section>
 		        	<label class="container">1990
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1991
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1992
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1993
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1994
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	          </section>
           	  <section>
 	              <label class="container">1995
-                  <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                  <input type="checkbox"  onclick="hideOrShowLayer('#')">
                   <span class="#"></span>
 	              </label>
 	              <label class="container">1996
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1997
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1998
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1999
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
                </section>
+           </section>
 	        </div> <!--SUBSECTION ENDING -->
 
 	        <button class="accordion" style="background-color: #fff;">2000 <!-- SUBSECTION BEGGINING -->
@@ -620,48 +666,49 @@
 	        	<section class="soil-labels">
                 <section>
 		        	<label class="container">2000
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2001
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2002
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2003
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2004
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	          </section>
           	  <section>
 	              <label class="container">2005
-                  <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                  <input type="checkbox"  onclick="hideOrShowLayer('#')">
                   <span class="#"></span>
 	              </label>
 	              <label class="container">2006
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2007
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2008
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2009
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
                </section>
+           </section>
 	        </div> <!--SUBSECTION ENDING -->
 
 	        <button class="accordion" style="background-color: #fff;">2010 <!-- SUBSECTION BEGGINING -->
@@ -674,48 +721,49 @@
 	        	<section class="soil-labels">
                 <section>
 		        	<label class="container">2010
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2011
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2012
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2013
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2014
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	          </section>
           	  <section>
 	              <label class="container">2015
-                  <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                  <input type="checkbox"  onclick="hideOrShowLayer('#')">
                   <span class="#"></span>
 	              </label>
 	              <label class="container">2016
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2017
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2018
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2019
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
                </section>
+           </section>
 	        </div> <!--SUBSECTION ENDING -->
 
 	        <button class="accordion" style="background-color: #fff;">2020 <!-- SUBSECTION BEGGINING -->
@@ -728,7 +776,7 @@
 	        	<section class="soil-labels">
                 <section>
 		        	<label class="container">2020
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              
@@ -736,6 +784,7 @@
           	  <section>
 	              
                </section>
+           </section>
 	        </div> <!--SUBSECTION ENDING -->
 
         </div> <!-- SECTION ENDING -->
@@ -757,48 +806,49 @@
 	        	<section class="soil-labels">
                 <section>
 		        	<label class="container">1980
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1981
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1982
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1983
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1984
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	          </section>
           	  <section>
 	              <label class="container">1985
-                  <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                  <input type="checkbox"  onclick="hideOrShowLayer('#')">
                   <span class="#"></span>
 	              </label>
 	              <label class="container">1986
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1987
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1988
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1989
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
                </section>
+           </section>
 	        </div> <!--SUBSECTION ENDING -->
 
 	        <button class="accordion" style="background-color: #fff;">1990 <!-- SUBSECTION BEGGINING -->
@@ -811,48 +861,49 @@
 	        	<section class="soil-labels">
                 <section>
 		        	<label class="container">1990
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1991
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1992
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1993
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1994
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	          </section>
           	  <section>
 	              <label class="container">1995
-                  <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                  <input type="checkbox"  onclick="hideOrShowLayer('#')">
                   <span class="#"></span>
 	              </label>
 	              <label class="container">1996
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1997
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1998
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">1999
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
                </section>
+           </section>
 	        </div> <!--SUBSECTION ENDING -->
 
 	        <button class="accordion" style="background-color: #fff;">2000 <!-- SUBSECTION BEGGINING -->
@@ -865,48 +916,49 @@
 	        	<section class="soil-labels">
                 <section>
 		        	<label class="container">2000
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2001
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2002
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2003
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2004
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	          </section>
           	  <section>
 	              <label class="container">2005
-                  <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                  <input type="checkbox"  onclick="hideOrShowLayer('#')">
                   <span class="#"></span>
 	              </label>
 	              <label class="container">2006
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2007
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2008
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2009
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
                </section>
+           </section>
 	        </div> <!--SUBSECTION ENDING -->
 
 	        <button class="accordion" style="background-color: #fff;">2010 <!-- SUBSECTION BEGGINING -->
@@ -919,48 +971,49 @@
 	        	<section class="soil-labels">
                 <section>
 		        	<label class="container">2010
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2011
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2012
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2013
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2014
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	          </section>
           	  <section>
 	              <label class="container">2015
-                  <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                  <input type="checkbox"  onclick="hideOrShowLayer('#')">
                   <span class="#"></span>
 	              </label>
 	              <label class="container">2016
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2017
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2018
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	              <label class="container">2019
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
                </section>
+           </section>
 	        </div> <!--SUBSECTION ENDING -->
 
 	        <button class="accordion" style="background-color: #fff;">2020 <!-- SUBSECTION BEGGINING -->
@@ -973,12 +1026,13 @@
 	        	<section class="soil-labels">
                 <section>
 		        	<label class="container">2020
-	                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	                <input type="checkbox"  onclick="hideOrShowLayer('#')">
 	                <span class="#"></span>
 	              </label>
 	          </section>
           	  <section>
                </section>
+           </section>
 	        </div> <!--SUBSECTION ENDING -->
         </div> <!-- SECTION ENDING -->
 
@@ -990,27 +1044,27 @@
       </button>
       <div class="panel">
       	<label class="container">Federais
-	    	<input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	    	<input type="checkbox"  onclick="hideOrShowLayer('#')">
 	        <span class="#"></span>
 	    </label>
 	    <label class="container">Estaduais
-	    	<input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	    	<input type="checkbox"  onclick="hideOrShowLayer('#')">
 	        <span class="#"></span>
 	    </label>
 	    <label class="container">Municipais
-	    	<input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	    	<input type="checkbox"  onclick="hideOrShowLayer('#')">
 	        <span class="#"></span>
 	    </label>
 	    <label class="container">Asfaltadas
-	    	<input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	    	<input type="checkbox"  onclick="hideOrShowLayer('#')">
 	        <span class="#"></span>
 	    </label>
 	    <label class="container">Sem asfalto
-	    	<input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	    	<input type="checkbox"  onclick="hideOrShowLayer('#')">
 	        <span class="#"></span>
 	    </label>
 	    <label class="container">Pontes
-	    	<input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+	    	<input type="checkbox"  onclick="hideOrShowLayer('#')">
 	        <span class="#"></span>
 	    </label>
       </div> <!-- SECTION ENDING -->
@@ -1022,7 +1076,10 @@
           </div>
        </button>
        <div class="panel">
-       	
+       		<label class="container">Mostrar/Não mostrar assentamentos
+                <input type="checkbox" onclick="hideOrShowLayer('#')">
+                <span class="solos"></span>
+             </label>
        </div>
 
       <button class="accordion">Estrutura agrária <!-- SECTION BEGGINING -->
@@ -1033,11 +1090,15 @@
       </button>
       <div class="panel"> 
       	<label class="container">Terras indígenas
-             <input type="checkbox" checked="checked" onclick="hideOrShowLayer('terras_indigenas')">
+             <input type="checkbox"  onclick="hideOrShowLayer('terras_indigenas')">
              <span class="terras_indigenas"></span>
         </label>
         <label class="container">Área militar
-            <input type="checkbox" checked="checked" onclick="hideOrShowLayer('militar')">
+            <input type="checkbox"  onclick="hideOrShowLayer('militar')">
+              <span class="militar"></span>
+        </label>
+        <label class="container">Área de preservação
+            <input type="checkbox"  onclick="hideOrShowLayer('#')">
               <span class="militar"></span>
         </label>
       </div> <!-- SECTION ENDING -->    
@@ -1059,32 +1120,36 @@
         <div class="panel"> 
           <section class="layer-labels">
             <section>
-              <label class="container">Área imóvel
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Área do imóvel
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP rios
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">APP
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Nascente
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP topo de morro
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Hidrografia
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Reserva legal
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">Uso administrativo
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Uso restrito
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Área administrativa
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Área consolidada
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
             </section>
@@ -1100,32 +1165,36 @@
         <div class="panel"> 
           <section class="layer-labels">
             <section>
-              <label class="container">Área imóvel
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Área do imóvel
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP rios
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">APP
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Nascente
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP topo de morro
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Hidrografia
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Reserva legal
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">Uso administrativo
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Uso restrito
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Área administrativa
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Área consolidada
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
             </section>
@@ -1141,32 +1210,36 @@
         <div class="panel"> 
           <section class="layer-labels">
             <section>
-              <label class="container">Área imóvel
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Área do imóvel
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP rios
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">APP
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Nascente
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP topo de morro
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Hidrografia
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Reserva legal
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">Uso administrativo
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Uso restrito
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Área administrativa
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Área consolidada
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
             </section>
@@ -1182,32 +1255,36 @@
         <div class="panel"> 
           <section class="layer-labels">
             <section>
-              <label class="container">Área imóvel
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Área do imóvel
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP rios
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">APP
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Nascente
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP topo de morro
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Hidrografia
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Reserva legal
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">Uso administrativo
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Uso restrito
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Área administrativa
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Área consolidada
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
             </section>
@@ -1223,32 +1300,36 @@
         <div class="panel"> 
           <section class="layer-labels">
             <section>
-              <label class="container">Área imóvel
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Área do imóvel
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP rios
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">APP
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Nascente
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP topo de morro
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Hidrografia
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Reserva legal
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">Uso administrativo
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Uso restrito
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Área administrativa
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Área consolidada
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
             </section>
@@ -1264,32 +1345,36 @@
         <div class="panel"> 
           <section class="layer-labels">
             <section>
-              <label class="container">Área imóvel
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Área do imóvel
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP rios
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">APP
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Nascente
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP topo de morro
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Hidrografia
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Reserva legal
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">Uso administrativo
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Uso restrito
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Área administrativa
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Área consolidada
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
             </section>
@@ -1305,32 +1390,36 @@
         <div class="panel"> 
           <section class="layer-labels">
             <section>
-              <label class="container">Área imóvel
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Área do imóvel
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP rios
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">APP
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Nascente
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP topo de morro
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Hidrografia
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Reserva legal
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">Uso administrativo
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Uso restrito
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Área administrativa
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Área consolidada
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
             </section>
@@ -1346,32 +1435,36 @@
         <div class="panel"> 
           <section class="layer-labels">
             <section>
-              <label class="container">Área imóvel
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Área do imóvel
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP rios
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">APP
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Nascente
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP topo de morro
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Hidrografia
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Reserva legal
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">Uso administrativo
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Uso restrito
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Área administrativa
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Área consolidada
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
             </section>
@@ -1388,32 +1481,36 @@
         <div class="panel"> 
           <section class="layer-labels">
             <section>
-              <label class="container">Área imóvel
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Área do imóvel
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP rios
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">APP
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Nascente
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP topo de morro
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Hidrografia
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Reserva legal
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">Uso administrativo
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Uso restrito
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Área administrativa
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Área consolidada
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
             </section>
@@ -1429,32 +1526,36 @@
         <div class="panel"> 
           <section class="layer-labels">
             <section>
-              <label class="container">Área imóvel
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Área do imóvel
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP rios
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">APP
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Nascente
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP topo de morro
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Hidrografia
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Reserva legal
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">Uso administrativo
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Uso restrito
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Área administrativa
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Área consolidada
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
             </section>
@@ -1470,32 +1571,36 @@
         <div class="panel"> 
           <section class="layer-labels">
             <section>
-              <label class="container">Área imóvel
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Área do imóvel
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP rios
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">APP
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Nascente
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP topo de morro
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Hidrografia
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Reserva legal
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">Uso administrativo
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Uso restrito
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Área administrativa
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Área consolidada
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
             </section>
@@ -1511,32 +1616,36 @@
         <div class="panel"> 
           <section class="layer-labels">
             <section>
-              <label class="container">Área imóvel
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Área do imóvel
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP rios
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">APP
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Nascente
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP topo de morro
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Hidrografia
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Reserva legal
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">Uso administrativo
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Uso restrito
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Área administrativa
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Área consolidada
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
             </section>
@@ -1552,32 +1661,36 @@
         <div class="panel"> 
           <section class="layer-labels">
             <section>
-              <label class="container">Área imóvel
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Área do imóvel
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP rios
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">APP
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Nascente
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP topo de morro
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Hidrografia
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Reserva legal
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">Uso administrativo
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Uso restrito
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Área administrativa
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Área consolidada
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
             </section>
@@ -1593,32 +1706,36 @@
         <div class="panel"> 
           <section class="layer-labels">
             <section>
-              <label class="container">Área imóvel
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Área do imóvel
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP rios
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">APP
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Nascente
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP topo de morro
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Hidrografia
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Reserva legal
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">Uso administrativo
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Uso restrito
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Área administrativa
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Área consolidada
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
             </section>
@@ -1634,32 +1751,36 @@
         <div class="panel"> 
           <section class="layer-labels">
             <section>
-              <label class="container">Área imóvel
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Área do imóvel
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP rios
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">APP
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Nascente
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">APP topo de morro
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Hidrografia
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Reserva legal
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
-              <label class="container">Uso administrativo
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+              <label class="container">Uso restrito
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
+                <span class="#"></span>
+              </label>
+              <label class="container">Área administrativa
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
               <label class="container">Área consolidada
-                <input type="checkbox" checked="checked" onclick="hideOrShowLayer('#')">
+                <input type="checkbox"  onclick="hideOrShowLayer('#')">
                 <span class="#"></span>
               </label>
             </section>
@@ -1677,6 +1798,12 @@
                 <span class="tooltiptext">Faça upload de um shape no formato geojson</span>
                 <i class="fa fa-info-circle"></i>
             </div>
+            <section id="distance">
+            	<label class="container">Calcular distância
+	                <input type="checkbox" onclick="showRoute()">
+	                <span class="solos"></span>
+                </label>
+            </section>
         </section>
         <div id="map"></div>
 
