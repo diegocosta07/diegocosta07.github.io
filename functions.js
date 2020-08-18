@@ -260,7 +260,7 @@ function loadProperty() {
 
     map.flyTo({
     	center: coordinates[0][mid],
-    	zoom: 9,
+    	zoom: 12,
     	speed: 0.7,
     	curve: 1,
     	easing(t) {
